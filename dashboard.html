@@ -1,26 +1,35 @@
-<!-- dashboard.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>User Dashboard</title>
+    <title>Synergy Fit Dashboard</title>
     <link rel="stylesheet" href="dashboard.css" />
   </head>
-  <body>
-    <div class="header">
-      <div class="top-nav">
-        <ul>
-          <li><a href="why.html" target="_blank">WHY CHOOSE US</a></li>
-          <li><a href="programs.html" target="_blank">PROGRAMS</a></li>
-          <li><a href="memberships.html" target="_blank">MEMBERSHIPS</a></li>
-          <li><a href="testimonials.html" target="_blank">TESTIMONIALS</a></li>
-        </ul>
+  <body class="header">
+    <nav class="top-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Workout Plans</a></li>
+        <li><a href="#">Nutrition Tracker</a></li>
+        <li><a href="#">Progress</a></li>
+        <li><a href="#">Schedule</a></li>
+        <li><a href="#">Tips</a></li>
+      </ul>
+      <button onclick="logout()">Logout</button>
+    </nav>
+
+    <div class="text-box">
+      <h1>Welcome back, <span id="user-name">Champion</span>!</h1>
+      <p>Your fitness journey continues. Check your stats, track meals, and crush goals!</p>
+      <div class="icon">
+        <img src="arrow-icon.png" alt="arrow" />
+      </div>
     </div>
-    <h1>Welcome, <span id="user-name"></span>!</h1>
-    <p>Here’s your personalized fitness dashboard.</p>
 
-    <button onclick="logout()">Logout</button>
-
-    <script src="dashboard.js"></script>
+    <script>
+      function logout() {
+        window.location.href = "index.html";
+      }
+    </script>
   </body>
 </html>
