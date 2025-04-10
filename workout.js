@@ -1,32 +1,38 @@
-const workoutInput = document.getElementById('workout-input');
-const logButton = document.getElementById('log-button');
-const workoutList = document.getElementById('workout-list');
+function logWorkout() {
+  const input = document.getElementById("workout-input");
+  const workout = input.value.trim();
 
-// Load saved workouts
-document.addEventListener('DOMContentLoaded', () => {
-  const savedWorkouts = JSON.parse(localStorage.getItem('workouts')) || [];
-  savedWorkouts.forEach((workout, index) => addWorkoutToDOM(workout, index));
-});
+  if (workout === "") return;
 
-logButton.addEventListener('click', () => {
-  const workout = workoutInput.value.trim();
-  if (workout !== '') {
-    const savedWorkouts = JSON.parse(localStorage.getItem('workouts')) || [];
-    savedWorkouts.push(workout);
-    localStorage.setItem('workouts', JSON.stringify(savedWorkouts));
-    addWorkoutToDOM(workout, savedWorkouts.length - 1);
-    workoutInput.value = '';
-  }
-});
+  let workouts = JSON.parse(localStorage.getItem("workoutLogs")) || [];
 
-function addWorkoutToDOM(workout, index) {
-  const li = document.createElement('li');
-  li.innerHTML = `
-    ${workout}
-    <span class="delete-btn" data-index="${index}">&#128465;</span>
-  `;
-  workoutList.appendChild(li);
+  // Add new workout
+  workouts.push({
+    text: workout,
+    timestamp: new Date().toLocaleString()
+  });
+
+  localStorage.setItem("workoutLogs", JSON.stringify(workouts));
+  input.value = "";
+  renderWorkouts();
 }
+
+function renderWorkouts() {
+  const list = document.getElementById("workout-list");
+  list.innerHTML = "";
+
+  const workouts = JSON.parse(localStorage.getItem("workoutLogs")) || [];
+
+  workouts.forEach((entry) => {
+    const li = document.createElement("li");
+    li.textContent = `${entry.text} (${entry.timestamp})`;
+    list.appendChild(li);
+  });
+}
+
+// Load workouts when page opens
+window.onload = renderWorkouts;
+
 
 // Delete workout
 workoutList.addEventListener('click', function (e) {
