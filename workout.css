@@ -98,53 +98,46 @@ p {
     border: none;
     outline: none;
 }
-.workout-section {
-    color: #fff;
-    margin: 60px auto;
-    max-width: 700px;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid #E50914;
-    border-radius: 12px;
-    text-align: center;
+textarea {
+  width: 100%;
+  height: 100px;
+  margin: 20px 0;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #1a1a1a;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 8px;
 }
 
-.workout-section h2 {
-    font-size: 28px;
-    color: #E50914;
-    margin-bottom: 20px;
+button {
+  padding: 10px 20px;
+  background-color: #E50914;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease;
 }
 
-.workout-section textarea {
-    width: 100%;
-    height: 120px;
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 15px;
-    resize: none;
+button:hover {
+  background-color: #ff1a1a;
 }
 
-.workout-section button {
-    background-color: #E50914;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    transition: background 0.3s;
+.logged-workouts {
+  margin-top: 30px;
 }
 
-.workout-section button:hover {
-    background-color: #b20710;
+.logged-workouts ul {
+  list-style: none;
+  padding-left: 0;
 }
 
-#saved-workout {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    color: #aaa;
+.logged-workouts li {
+  background-color: #1c1c1c;
+  border: 1px solid #333;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
