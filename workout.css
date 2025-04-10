@@ -98,6 +98,16 @@ p {
     border: none;
     outline: none;
 }
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+
+h1, h2 {
+  font-family: 'Oswald', sans-serif;
+  color: #fff; /* changed from red to white */
+}
+
 textarea {
   width: 100%;
   height: 100px;
@@ -132,6 +142,7 @@ button:hover {
 .logged-workouts ul {
   list-style: none;
   padding-left: 0;
+  color: white;
 }
 
 .logged-workouts li {
@@ -140,4 +151,5 @@ button:hover {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
+  color: white;
 }
