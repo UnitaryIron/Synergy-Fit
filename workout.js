@@ -1,13 +1,11 @@
 function saveWorkout() {
   const workout = document.getElementById("workout-input").value;
   localStorage.setItem("myWorkout", workout);
-  displayWorkout();
 }
 
-function displayWorkout() {
+function loadWorkout() {
   const saved = localStorage.getItem("myWorkout");
-  document.getElementById("saved-workout").textContent = saved || "None yet.";
+  document.getElementById("workout-input").value = saved || "";
 }
 
-window.onload = displayWorkout;
-
+window.onload = loadWorkout;
