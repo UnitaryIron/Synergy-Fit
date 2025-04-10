@@ -14,24 +14,45 @@
     padding-right: 8%;
     position: relative;
 }
-.top-nav{
+.top-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 0 15px;
+    margin: 0 10px;
+    padding: 10px 20px;
     border-bottom: 1px solid #bababa;
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+.top-nav a {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+
+.top-nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #E50914; /* red underline */
+    transition: width 0.3s ease-in-out;
+}
+
+.top-nav a:hover::after {
+    width: 100%;
+}
+
 .top-nav a:hover {
-    background-color: #E50914; /* Neon Red Background */
     border: 0;
     outline: 0;
-    border-radius: 30px;
-    padding: 10px 20px;
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1);
 }
+
+
 
 .top-nav ul li{
     list-style: none;
@@ -47,14 +68,21 @@
     font-size: 15px;
 }
 
-.top-nav button{
-    background: #E50914;
-    color: #fff;
-    border: 0;
-    outline: 0;
-    border-radius: 30px;
-    padding: 10px 20px;
+.top-nav button {
+    background: none;
+    color: #fff; /* always white */
+    border: none;
+    outline: none;
     cursor: pointer;
+    font: inherit;
+    border-radius: 0; /* optional if you don't want rounded edges */
+}
+
+.top-nav button:hover {
+    background: none;
+    color: #fff; /* still white */
+    border: none;
+    outline: none;
 }
 
 body {
