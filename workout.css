@@ -153,3 +153,15 @@ button:hover {
   border-radius: 5px;
   color: white;
 }
+.delete-btn {
+  float: right;
+  color: #E50914;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: #ff4d4d;
+}
