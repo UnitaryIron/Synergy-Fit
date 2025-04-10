@@ -25,19 +25,41 @@
         <img src="arrow-icon.png" alt="arrow" />
       </div>
     </div>
-    <section class="motivation-quotes">
+    <section class="quote-section">
   <h2>Daily Motivation</h2>
-  <ul>
-    <li>"Push yourself, because no one else is going to do it for you."</li>
-    <li>"Success starts with self-discipline."</li>
-    <li>"Don’t stop when you’re tired. Stop when you’re done."</li>
-    <li>"It never gets easier. You just get stronger."</li>
-    <li>"Train insane or remain the same."</li>
-    <li>"You don’t have to be extreme, just consistent."</li>
-    <li>"Sore today, strong tomorrow."</li>
-  </ul>
+  <div class="quote-box">
+    <button id="prev-quote" class="nav-btn">❮</button>
+    <p id="quote-text">"Push yourself, because no one else is going to do it for you."</p>
+    <button id="next-quote" class="nav-btn">❯</button>
+  </div>
   <p class="cta">That’s enough motivation... now go crush your workout 😎🔥</p>
 </section>
+
+<script>
+  const quotes = [
+    "Push yourself, because no one else is going to do it for you.",
+    "Success starts with self-discipline.",
+    "Don’t stop when you’re tired. Stop when you’re done.",
+    "It never gets easier. You just get stronger.",
+    "Train insane or remain the same.",
+    "You don’t have to be extreme, just consistent.",
+    "Sore today, strong tomorrow."
+  ];
+
+  let current = 0;
+  const quoteText = document.getElementById("quote-text");
+
+  document.getElementById("next-quote").addEventListener("click", () => {
+    current = (current + 1) % quotes.length;
+    quoteText.textContent = `"${quotes[current]}"`;
+  });
+
+  document.getElementById("prev-quote").addEventListener("click", () => {
+    current = (current - 1 + quotes.length) % quotes.length;
+    quoteText.textContent = `"${quotes[current]}"`;
+  });
+</script>
+
 
 
     <script>
