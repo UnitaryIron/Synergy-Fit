@@ -104,40 +104,59 @@ body {
   border: none;
   outline: none;
 }
-.motivation-quotes {
-    margin-top: 40px;
+.quote-section {
+    margin-top: 60px;
+    text-align: center;
+    color: #fff;
     padding: 30px;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid #E50914;
     border-radius: 12px;
-    color: #fff;
     max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
     backdrop-filter: blur(5px);
 }
 
-.motivation-quotes h2 {
-    font-size: 28px;
+.quote-section h2 {
     color: #E50914;
-    margin-bottom: 15px;
+    font-size: 28px;
+    margin-bottom: 20px;
     font-weight: 700;
 }
 
-.motivation-quotes ul {
-    list-style: disc;
-    padding-left: 20px;
-    margin-bottom: 20px;
+.quote-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
 }
 
-.motivation-quotes ul li {
-    margin-bottom: 10px;
+#quote-text {
+    flex: 1;
+    font-size: 20px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+    padding: 0 10px;
 }
 
-.motivation-quotes .cta {
+.nav-btn {
+    background: #E50914;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #b20710;
+}
+
+.cta {
+    margin-top: 25px;
     font-size: 18px;
     color: #E50914;
     font-weight: bold;
-    text-align: center;
 }
