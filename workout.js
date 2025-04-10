@@ -32,16 +32,3 @@ function renderWorkouts() {
 
 // Load workouts when page opens
 window.onload = renderWorkouts;
-
-
-// Delete workout
-workoutList.addEventListener('click', function (e) {
-  if (e.target.classList.contains('delete-btn')) {
-    const index = parseInt(e.target.getAttribute('data-index'));
-    let workouts = JSON.parse(localStorage.getItem('workouts')) || [];
-    workouts.splice(index, 1);
-    localStorage.setItem('workouts', JSON.stringify(workouts));
-    workoutList.innerHTML = '';
-    workouts.forEach((workout, idx) => addWorkoutToDOM(workout, idx));
-  }
-});
