@@ -17,16 +17,17 @@
       </ul>
       <button onclick="logout()">Logout</button>
     </nav>
+    <div class="container">
+    <h1>Workout Logger</h1>
+    <textarea id="workout-input" placeholder="What workout did you just complete?"></textarea>
+    <button onclick="logWorkout()">Log Workout</button>
+    <div class="logged-workouts">
+      <h2>Previously Logged Workouts</h2>
+      <ul id="workout-list"></ul>
+    </div>
+  </div>
 
-    <section class="workout-section">
-  <h2>Log Your Workout</h2>
-  <textarea id="workout-input" placeholder="e.g., 20 push-ups, 30 squats, 15 mins cardio..."></textarea>
-  <button onclick="saveWorkout()">Save Workout</button>
-
-  <h3>Your Last Logged Workout:</h3>
-  <p id="saved-workout">Nothing logged yet.</p>
-</section>
-
+  <script src="workout.js"></script>
     <script>
       function logout() {
         window.location.href = "index.html";
