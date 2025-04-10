@@ -1,18 +1,13 @@
 function saveWorkout() {
-  const input = document.getElementById('workout-input').value;
-  if (input.trim() === "") {
-    alert("Please enter something!");
-    return;
-  }
-  localStorage.setItem('workoutLog', input);
-  document.getElementById('saved-workout').textContent = input;
-  document.getElementById('workout-input').value = "";
+  const workout = document.getElementById("workout-input").value;
+  localStorage.setItem("myWorkout", workout);
+  displayWorkout();
 }
 
-// Load saved workout on page load
-window.onload = () => {
-  const saved = localStorage.getItem('workoutLog');
-  if (saved) {
-    document.getElementById('saved-workout').textContent = saved;
-  }
-};
+function displayWorkout() {
+  const saved = localStorage.getItem("myWorkout");
+  document.getElementById("saved-workout").textContent = saved || "None yet.";
+}
+
+window.onload = displayWorkout;
+
