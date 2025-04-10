@@ -102,6 +102,9 @@
       function handleCredentialResponse(response) {
   const data = parseJwt(response.credential);
   console.log("Google user:", data);
+       // After a successful login:
+      localStorage.setItem("userName", data.name || data.email);
+      window.location.href = "dashboard.html";
 
   // Update login success message on the page
   document.getElementById("login-success-message").textContent = `Welcome to Synergy Fit,   ${data.name || data.email}.`;
