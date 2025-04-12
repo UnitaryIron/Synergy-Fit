@@ -46,7 +46,28 @@
   <!-- Success and Error Message -->
   <div id="login-success-message"></div>
   <div id="error-message" style="color: red;"></div>
+  <div id="login-success-message"></div>
+  <div id="error-message"></div>
+  <style>
+      #login-success-message, #error-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1a1a1a; /* dark background */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    z-index: 9999;
+  }
 
+  #error-message {
+    background-color: #b91c1c; /* red background for errors */
+  }
+  </style>
   <script>
     // This function is triggered after CAPTCHA is completed
     function enableLogin() {
@@ -96,7 +117,7 @@
 
       return JSON.parse(jsonPayload);
     }
-
+     
     </script>
   </body>
 </html>
