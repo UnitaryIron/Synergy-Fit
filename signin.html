@@ -21,7 +21,6 @@
 
     
       <!-- Google Sign-In button -->
-     <div style="transform: scale(1.5); transform-origin: top left;"> 
       <div
         id="g_id_onload"
         data-client_id="854962203059-i2ndi0smttouaa0a5au5kl3n729nd8d0.apps.googleusercontent.com"
@@ -37,11 +36,18 @@
         data-logo_alignment="left"
       ></div>
     </div>
-         <!-- Google reCAPTCHA -->
+
+    <form action="/verify" method="POST">
+  <!-- Your email, password fields etc -->
+
+  <!-- Google reCAPTCHA -->
   <div class="g-recaptcha" data-sitekey="6Le0kxUrAAAAAGO-ri38-Km2lpyXMaCew6w0BsKP"></div>
 
   <input type="submit" value="Submit">
 </form>
+
+<!-- Load reCAPTCHA script -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <!-- Load the reCAPTCHA API -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
