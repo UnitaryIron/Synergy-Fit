@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Sign In</title>
     <link rel="stylesheet" href="login.css" />
     <script type="text/javascript" src="validation.js" defer></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
   <body>
     <div class="wrapper">
-      <h1>Login</h1>
+      <h1>Sign In</h1>
       <p id="error-message" style="color: red"></p>
       <p id="login-success-message" style="color: green"></p>
   <!-- Google reCAPTCHA script -->
@@ -22,6 +22,7 @@
     .g_id_signin {
       pointer-events: none;
       opacity: 0.5;
+      transform: scale(1.5);
     }
     .g-recaptcha {
       transform: scale(0.75); /* Scales down the widget */
