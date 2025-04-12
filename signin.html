@@ -37,33 +37,17 @@
         data-logo_alignment="left"
       ></div>
     </div>
+         <!-- Google reCAPTCHA -->
+  <div class="g-recaptcha" data-sitekey="6Le0kxUrAAAAAGO-ri38-Km2lpyXMaCew6w0BsKP"></div>
 
+  <input type="submit" value="Submit">
+</form>
+
+<!-- Load the reCAPTCHA API -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      
     <script>
-      // LocalStorage-based login
-      document.getElementById("form").addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const email = document.getElementById("email-input").value.trim();
-        const password = document.getElementById("password-input").value;
-        const error = document.getElementById("error-message");
-        const success = document.getElementById("login-success-message");
-
-        const storedUser = JSON.parse(localStorage.getItem("user"));
-
-        if (
-          storedUser &&
-          storedUser.email === email &&
-          storedUser.password === password
-        ) {
-          error.textContent = "";
-          success.textContent = "Signed in successfully!";
-        } else {
-          success.textContent = "";
-          error.textContent = "Invalid email or password!";
-        }
-      });
-
-      // Google Sign-In handler
+    // Google Sign-In handler
       function handleCredentialResponse(response) {
   const data = parseJwt(response.credential);
   console.log("Google user:", data);
@@ -92,7 +76,7 @@
     });
   }
 }
-
+        
 
       // Decode JWT
       function parseJwt(token) {
