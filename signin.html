@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In</title>
-  <link rel="stylesheet" href="login.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css" />
+    <script type="text/javascript" src="validation.js" defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Login</h1>
+      <p id="error-message" style="color: red"></p>
+      <p id="login-success-message" style="color: green"></p>
   <!-- Google reCAPTCHA script -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <!-- Google Sign-In script -->
