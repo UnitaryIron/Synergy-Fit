@@ -10,6 +10,12 @@ app.use(express.static('public')); // Serves your signin.html, etc.
 
 app.post('/verify', async (req, res) => {
   const token = req.body['g-recaptcha-response'];
+
+  // 🚫 Block empty responses
+  if (!token) {
+    return res.send("⚠️ Please complete the CAPTCHA.");
+  }
+
   const verifyURL = `https://www.google.com/recaptcha/api/siteverify?secret=${SECRET_KEY}&response=${token}`;
 
   try {
@@ -19,13 +25,10 @@ app.post('/verify', async (req, res) => {
     if (success) {
       res.send("✅ CAPTCHA verified! You’re good to go.");
     } else {
-      // 🛑 Graceful error handling
       const errorCodes = response.data['error-codes'] || [];
-      res.send(`❌ CAPTCHA failed. Reasons: ${errorCodes.join(', ') || 'Unknown error'}`);
+      res.send(`❌ CAPTCHA failed. Reason: ${errorCodes.join(', ')}`);
     }
   } catch (error) {
-    // 🛑 Graceful handling of technical errors (like network issues)
-    res.status(500).send("⚠️ Server error while verifying CAPTCHA. Please try again later.");
+    res.status(500).send("⚠️ Server error while verifying CAPTCHA. Try again.");
   }
 });
-
