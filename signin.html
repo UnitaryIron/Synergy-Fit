@@ -45,14 +45,13 @@
 
   <!-- Success and Error Message -->
   <div id="login-success-message"></div>
-  <div id="error-message"></div>
   <style>
-      #login-success-message, #error-message {
+  #login-success-message {
     position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #1a1a1a; /* dark background */
+    background-color: #28a745; /* green background for success */
     color: #fff;
     padding: 10px 20px;
     border-radius: 8px;
@@ -60,9 +59,10 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     z-index: 9999;
+    display: none; /* Initially hidden */
   }
-  }
-  </style>
+</style>
+
   <script>
     // This function is triggered after CAPTCHA is completed
     function enableLogin() {
