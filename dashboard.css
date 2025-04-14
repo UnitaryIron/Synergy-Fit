@@ -160,3 +160,57 @@ body {
     color: #E50914;
     font-weight: bold;
 }
+/* Profile Section */
+.profile-section {
+  margin-top: 60px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #E50914;
+  border-radius: 12px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  backdrop-filter: blur(5px);
+  color: #fff;
+}
+
+.profile-section h2 {
+  color: #E50914;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+}
+
+.save-btn {
+  background-color: #E50914;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #b20710;
+}
