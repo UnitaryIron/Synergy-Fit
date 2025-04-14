@@ -1,216 +1,156 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
-
+/* General Reset and Typography */
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Oswald', sans-serif;
   box-sizing: border-box;
-}
-
-h1, h2, h3 {
-  font-family: 'Oswald', sans-serif;
-}
-
-p {
   font-family: 'Montserrat', sans-serif;
 }
 
 body {
   background: #000000;
   color: white;
+  padding: 20px;
+  font-size: 16px;
 }
 
-/* remove or fix this if you don't have a valid image yet */
+/* Header */
 .header {
   width: 100%;
-  height: 100vh;
-  background: #000000;
-  padding-left: 11%;
-  padding-right: 8%;
-  position: relative;
-
-  /* comment out the image for now */
-  /* background-image: url("gym-fella.jpg"); */
-  background-size: 45%;
-  background-repeat: no-repeat;
-  background-position: 92% 100%;
+  background: #111;
+  padding: 20px;
+  text-align: center;
 }
 
 .top-nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin: 0 10px;
-  padding: 10px 20px;
-  border-bottom: 1px solid #bababa;
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  align-items: center;
+  padding: 15px;
+  background: #1c1c1c;
+  border-radius: 8px;
 }
 
 .top-nav a {
-  position: relative;
+  color: #fff;
   text-decoration: none;
-  color: inherit;
-}
-
-.top-nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #E50914;
-  transition: width 0.3s ease-in-out;
-}
-
-.top-nav a:hover::after {
-  width: 100%;
+  font-size: 16px;
+  margin-right: 20px;
 }
 
 .top-nav a:hover {
-  border: 0;
-  outline: 0;
-  cursor: pointer;
-  transform: scale(1);
-}
-
-.top-nav ul li {
-  list-style: none;
-  display: inline-block;
-  margin-right: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.top-nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 15px;
+  text-decoration: underline;
 }
 
 .top-nav button {
-  background: none;
+  background: #E50914;
   color: #fff;
+  padding: 8px 16px;
   border: none;
-  outline: none;
   cursor: pointer;
-  font: inherit;
-  border-radius: 0;
+  border-radius: 5px;
 }
 
 .top-nav button:hover {
-  background: none;
-  color: #fff;
-  border: none;
-  outline: none;
-}
-.quote-section {
-    margin-top: 60px;
-    text-align: center;
-    color: #fff;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid #E50914;
-    border-radius: 12px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    backdrop-filter: blur(5px);
+  background: #b20710;
 }
 
-.quote-section h2 {
-    color: #E50914;
-    font-size: 28px;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.quote-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-#quote-text {
-    flex: 1;
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    padding: 0 10px;
-}
-
-.nav-btn {
-    background: #E50914;
-    color: #fff;
-    border: none;
-    font-size: 24px;
-    padding: 10px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.nav-btn:hover {
-    background: #b20710;
-}
-
-.cta {
-    margin-top: 25px;
-    font-size: 18px;
-    color: #E50914;
-    font-weight: bold;
-}
-/* Profile Section */
-.profile-section {
-  margin-top: 60px;
+/* Profile Data Section */
+.profile-data {
+  max-width: 800px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.1);
   padding: 30px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid #E50914;
   border-radius: 12px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  backdrop-filter: blur(5px);
+  border: 1px solid #E50914;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.profile-data h1 {
+  font-size: 32px;
   color: #fff;
-}
-
-.profile-section h2 {
-  color: #E50914;
-  font-size: 28px;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-.form-group {
   margin-bottom: 20px;
 }
 
-.form-group label {
+.profile-data p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
   font-size: 16px;
   margin-bottom: 5px;
-  display: block;
+  color: #fff;
 }
 
-.form-group input, .form-group select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #333;
-  color: #fff;
+form input,
+form select {
+  padding: 12px;
   font-size: 16px;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+  border-radius: 8px;
 }
 
-.save-btn {
-  background-color: #E50914;
+form button {
+  background: #E50914;
   color: #fff;
+  padding: 12px 20px;
+  font-size: 18px;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
   cursor: pointer;
+  border-radius: 8px;
 }
 
-.save-btn:hover {
-  background-color: #b20710;
+form button:hover {
+  background: #b20710;
+}
+
+#profile-info {
+  font-size: 18px;
+  margin-top: 30px;
+  color: #fff;
+}
+
+#profile-info span {
+  font-weight: bold;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .profile-data {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  form {
+    gap: 15px;
+  }
+
+  form input,
+  form select {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  form button {
+    padding: 10px 18px;
+    font-size: 16px;
+  }
+
+  #profile-info {
+    font-size: 16px;
+  }
 }
