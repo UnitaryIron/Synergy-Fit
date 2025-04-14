@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workout Analytics</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: 'Oswald', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    canvas {
+      margin-top: 40px;
+      background-color: #222;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    a {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-size: 16px;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>📈 Workout Analytics</h1>
+  <canvas id="workoutChart" width="600" height="300"></canvas>
+  <br>
+  <a href="workout.html">⬅ Back to Workout Logger</a>
+
+  <script>
+    function renderWorkoutChart() {
+      const workouts = JSON.parse(localStorage.getItem("workoutLogs")) || [];
+
+      const counts = {};
+
+      workouts.forEach(entry => {
+        const date = new Date(entry.timestamp).toLocaleDateString();
+        counts[date] = (counts[date] || 0) + 1;
+      });
+
+      const labels = Object.keys(counts);
+      const data = Object.values(counts);
+
+      const ctx = document.getElementById("workoutChart").getContext("2d");
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Workouts per Day',
+            data: data,
+            backgroundColor: '#ff4d4d',
+            borderColor: '#cc0000',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                stepSize: 1
+              }
+            }
+          }
+        }
+      });
+    }
+
+    window.onload = renderWorkoutChart;
+  </script>
+</body>
+</html>
