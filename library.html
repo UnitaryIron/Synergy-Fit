@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise Library</title>
+    <link rel="stylesheet" href="exercise-library.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="ChatGPT Image Apr 3, 2025, 12_11_25 PM.png"
+    />
+  </head>
+  <body class="header">
+    <nav class="top-nav">
+      <ul>
+        <li><a href="dashboard.html">HOME</a></li>
+        <li><a href="workout.html">WORKOUT LOGGER</a></li>
+        <li><a href="analytics.html">WORKOUT ANALYSIS</a></li>
+        <li><a href="progress.html">PROGRESS</a></li>
+        <li><a href="schedule.html">SCHEDULE</a></li>
+        <li><a href="tips.html">TIPS</a></li>
+      </ul>
+      <button onclick="logout()">Logout</button>
+    </nav>
+
+    <div class="profile-data">
+      <h1>Welcome back, <span id="user-name">Champion</span>!</h1>
+      <p id="profile-info"></p>
+    </div>
+
+    <section class="exercise-library">
+      <h2>Your Exercise Library</h2>
+      <div id="exercise-list"></div>
+    </section>
+
+    <script>
+      window.onload = function() {
+        const savedName = localStorage.getItem('userName');
+        const savedGoal = localStorage.getItem('userGoal');
+
+        document.getElementById('user-name').textContent = savedName || 'Champion';
+        const profileInfo = `
+          Name: ${savedName || 'N/A'}<br>
+          Goal: ${savedGoal || 'Not Set'}
+        `;
+        document.getElementById('profile-info').innerHTML = profileInfo;
+
+        loadExercises(savedGoal);
+      };
+
+      function loadExercises(goal) {
+        const exerciseListDiv = document.getElementById('exercise-list');
+        let exercises = [];
+
+        if (goal === 'Weight Lifting') {
+          exercises = [
+            "Barbell Squats",
+            "Deadlifts",
+            "Bench Press",
+            "Overhead Press",
+            "Bicep Curls"
+          ];
+        } else if (goal === 'Cardio') {
+          exercises = [
+            "Running",
+            "Cycling",
+            "Jump Rope",
+            "HIIT Workouts",
+            "Rowing"
+          ];
+        } else if (goal === 'Yoga') {
+          exercises = [
+            "Downward Dog",
+            "Warrior Pose",
+            "Tree Pose",
+            "Child's Pose",
+            "Cobra Pose"
+          ];
+        } else {
+          exercises = ["Please set your fitness goal in your profile to get exercise recommendations."];
+        }
+
+        exerciseListDiv.innerHTML = exercises.map(exercise => `<p>${exercise}</p>`).join('');
+      }
+
+      function logout() {
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>
