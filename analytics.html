@@ -1,81 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Workout Analytics</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
-      background-color: #111;
-      color: white;
-      font-family: 'Oswald', sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #121212;
+      color: #fff;
       text-align: center;
-      padding: 20px;
+      padding: 40px;
     }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
     canvas {
-      margin-top: 40px;
-      background-color: #222;
-      border-radius: 10px;
-      padding: 20px;
+      max-width: 600px;
+      height: 300px !important;
+      margin: auto;
     }
-    a {
-      color: #ff4d4d;
-      text-decoration: none;
-      font-size: 16px;
-      display: inline-block;
-      margin-top: 20px;
+
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #e63946;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d62828;
     }
   </style>
 </head>
 <body>
-  <h1>📈 Workout Analytics</h1>
-  <canvas id="workoutChart" width="600" height="300"></canvas>
-  <br>
-  <a href="workout.html">⬅ Back to Workout Logger</a>
+  <h1>📉 Workout Analytics</h1>
+  <canvas id="workoutChart"></canvas>
+  <button onclick="window.location.href='index.html'">Back to Logger</button>
 
   <script>
-    function renderWorkoutChart() {
-      const workouts = JSON.parse(localStorage.getItem("workoutLogs")) || [];
+    const logs = JSON.parse(localStorage.getItem("workoutLogs")) || [];
 
-      const counts = {};
+    // Group by date
+    const dateCounts = {};
 
-      workouts.forEach(entry => {
-        const date = new Date(entry.timestamp).toLocaleDateString();
-        counts[date] = (counts[date] || 0) + 1;
-      });
+    logs.forEach(log => {
+      const date = new Date(log.timestamp);
+      const dayKey = date.toLocaleDateString(); // e.g. "4/14/2025"
+      dateCounts[dayKey] = (dateCounts[dayKey] || 0) + 1;
+    });
 
-      const labels = Object.keys(counts);
-      const data = Object.values(counts);
-
-      const ctx = document.getElementById("workoutChart").getContext("2d");
-
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: labels,
-          datasets: [{
-            label: 'Workouts per Day',
-            data: data,
-            backgroundColor: '#ff4d4d',
-            borderColor: '#cc0000',
-            borderWidth: 1
-          }]
-        },
-        options: {
-          responsive: true,
-          scales: {
-            y: {
-              beginAtZero: true,
-              ticks: {
-                stepSize: 1
-              }
-            }
-          }
-        }
-      });
+    // Create a list of all days from the first log to today
+    const allDates = [];
+    if (logs.length > 0) {
+      const startDate = new Date(logs[0].timestamp);
+      const endDate = new Date();
+      const current = new Date(startDate);
+      while (current <= endDate) {
+        allDates.push(current.toLocaleDateString());
+        current.setDate(current.getDate() + 1);
+      }
     }
 
-    window.onload = renderWorkoutChart;
+    const labels = allDates;
+    const data = labels.map(date => dateCounts[date] || 0);
+
+    const ctx = document.getElementById('workoutChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Workouts per Day',
+          data: data,
+          backgroundColor: '#ff4d4d',
+        }]
+      },
+      options: {
+        scales: {
+          x: {
+            ticks: { color: '#fff' },
+            grid: { color: '#444' }
+          },
+          y: {
+            beginAtZero: true,
+            ticks: { color: '#fff' },
+            grid: { color: '#444' }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: { color: '#fff' }
+          }
+        }
+      }
+    });
   </script>
 </body>
 </html>
