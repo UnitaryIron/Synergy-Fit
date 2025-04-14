@@ -63,22 +63,43 @@
       </form>
     </section>
 
-    <script>
-      // Save profile function (in real-world applications, this would save data to a server)
-      document.getElementById('user-profile-form').addEventListener('submit', function (e) {
-        e.preventDefault(); // Prevent form from submitting
-        const name = document.getElementById('name').value;
-        const age = document.getElementById('age').value;
-        const weight = document.getElementById('weight').value;
-        const height = document.getElementById('height').value;
-        const goal = document.getElementById('goal').value;
+   <script>
+  // Load saved user profile data from localStorage (if available)
+  window.onload = function() {
+    const savedName = localStorage.getItem('userName');
+    const savedAge = localStorage.getItem('userAge');
+    const savedWeight = localStorage.getItem('userWeight');
+    const savedHeight = localStorage.getItem('userHeight');
+    const savedGoal = localStorage.getItem('userGoal');
 
-        // Simulate saving data
-        alert(`Profile saved!\nName: ${name}\nAge: ${age}\nWeight: ${weight}kg\nHeight: ${height}cm\nGoal: ${goal}`);
-        
-        // You can replace this with actual logic to save the data in localStorage, or send it to a server
-      });
-    </script>
+    if (savedName) document.getElementById('name').value = savedName;
+    if (savedAge) document.getElementById('age').value = savedAge;
+    if (savedWeight) document.getElementById('weight').value = savedWeight;
+    if (savedHeight) document.getElementById('height').value = savedHeight;
+    if (savedGoal) document.getElementById('goal').value = savedGoal;
+  }
+
+  // Save profile function (saves data to localStorage)
+  document.getElementById('user-profile-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent form from submitting
+
+    const name = document.getElementById('name').value;
+    const age = document.getElementById('age').value;
+    const weight = document.getElementById('weight').value;
+    const height = document.getElementById('height').value;
+    const goal = document.getElementById('goal').value;
+
+    // Save data to localStorage
+    localStorage.setItem('userName', name);
+    localStorage.setItem('userAge', age);
+    localStorage.setItem('userWeight', weight);
+    localStorage.setItem('userHeight', height);
+    localStorage.setItem('userGoal', goal);
+
+    alert(`Profile saved!\nName: ${name}\nAge: ${age}\nWeight: ${weight}kg\nHeight: ${height}cm\nGoal: ${goal}`);
+  });
+</script>
+
 
     <script>
       function logout() {
