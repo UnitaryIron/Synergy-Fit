@@ -56,17 +56,34 @@
       dateCounts[dayKey] = (dateCounts[dayKey] || 0) + 1;
     });
 
-    // Create a list of all days from the first log to today
-    const allDates = [];
-    if (logs.length > 0) {
-      const startDate = new Date(logs[0].timestamp);
-      const endDate = new Date();
-      const current = new Date(startDate);
-      while (current <= endDate) {
-        allDates.push(current.toLocaleDateString());
-        current.setDate(current.getDate() + 1);
-      }
-    }
+   function formatDate(date) {
+  return date.toLocaleDateString();
+}
+
+function getMinMaxDates(logs) {
+  let min = new Date(logs[0].timestamp);
+  let max = new Date(logs[0].timestamp);
+
+  logs.forEach(log => {
+    const d = new Date(log.timestamp);
+    if (d < min) min = d;
+    if (d > max) max = d;
+  });
+
+  return { min, max };
+}
+
+const allDates = [];
+if (logs.length > 0) {
+  const { min, max } = getMinMaxDates(logs);
+  const current = new Date(min);
+
+  while (current <= max) {
+    allDates.push(formatDate(new Date(current)));
+    current.setDate(current.getDate() + 1);
+  }
+}
+
 
     const labels = allDates;
     const data = labels.map(date => dateCounts[date] || 0);
