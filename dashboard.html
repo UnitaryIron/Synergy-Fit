@@ -48,8 +48,6 @@
         </div>
         <button type="submit">Save Profile</button>
       </form>
-
-      <div id="profile-info"></div>
     </div>
 
     <script>
@@ -86,13 +84,7 @@
         localStorage.setItem('userAge', age);
         localStorage.setItem('userGoal', goal);
 
-        // Update profile info on the page
-        document.getElementById('user-name').textContent = name;
-        document.getElementById('profile-info').innerHTML = `
-          Name: ${name}<br>
-          Age: ${age}<br>
-          Goal: ${goal}
-        `;
+        
       });
 
       function logout() {
