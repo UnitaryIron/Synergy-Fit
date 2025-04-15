@@ -21,11 +21,6 @@ p {
     padding-left: 11%;
     padding-right: 8%;
     position: relative;
-
-    background-image: url("guy.jpg");
-    background-size: 45%;
-    background-repeat: no-repeat;
-    background-position: 92% 100%;
 }
 .top-nav {
     display: flex;
