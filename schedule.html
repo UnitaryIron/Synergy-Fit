@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Schedule - Fitness Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="calendar.css" />
+    <link rel="icon" type="image/png" href="ChatGPT Image Apr 3, 2025, 12_11_25 PM.png" />
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" rel="stylesheet" />
+  </head>
+  <body class="header">
+    <nav class="top-nav">
+      <ul>
+        <li><a href="dashboard.html">HOME</a></li>
+        <li><a href="workout.html">WORKOUT LOGGER</a></li>
+        <li><a href="library.html">EXERCISE LIBRARY</a></li>
+        <li><a href="#">PROGRESS</a></li>
+        <li><a href="schedule.html">SCHEDULE</a></li>
+        <li><a href="#">TIPS</a></li>
+      </ul>
+      <button onclick="logout()">Logout</button>
+    </nav>
+
+    <div id="calendar"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
+    <script src="calendar.js"></script>
+  </body>
+</html>
