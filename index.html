@@ -12,27 +12,35 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="header">
-      <div class="top-nav">
-        <ul>
+    <header class="header">
+      <nav class="top-nav">
+        <div class="logo">Synergy Fit</div>
+        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
           <li><a href="signin.html">HOME</a></li>
           <li><a href="signin.html">WORKOUT PLANS</a></li>
-          <li><a href="signin.html">NUTRITIOIN TRACKER</a></li>
+          <li><a href="signin.html">NUTRITION TRACKER</a></li>
           <li><a href="signin.html">PROGRESS</a></li>
+          <li><a href="signin.html" class="signin-btn">Sign In</a></li>
         </ul>
-
-        <a href="signin.html" >
-          <button>Sign In</button>
-        </a>
-      </div>
+      </nav>
 
       <div class="text-box">
         <p>WE PUSH</p>
         <h1>Beyond limits.</h1>
         <div class="icon">
-          <img src="arrow.png" />
+          <img src="arrow.png" alt="arrow icon" />
         </div>
       </div>
-    </div>
+    </header>
+
+    <script>
+      const mobileMenu = document.getElementById("mobile-menu");
+      const navLinks = document.getElementById("nav-links");
+
+      mobileMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
