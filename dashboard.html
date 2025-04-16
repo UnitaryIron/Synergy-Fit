@@ -4,15 +4,61 @@
     <meta charset="UTF-8" />
     <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboard.css" />
     <link
       rel="icon"
       type="image/png"
       href="ChatGPT Image Apr 3, 2025, 12_11_25 PM.png"
     />
+    <style>
+      @media (max-width: 768px) {
+        .top-nav ul {
+          display: none;
+          flex-direction: column;
+          background: #111;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+        }
+
+        .top-nav ul.show {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: block;
+          background: none;
+          border: none;
+          font-size: 28px;
+          color: white;
+          cursor: pointer;
+          padding: 10px 20px;
+        }
+
+        .top-nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+        }
+
+        .top-nav button {
+          margin-right: 10px;
+        }
+      }
+
+      @media (min-width: 769px) {
+        .menu-toggle {
+          display: none;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <nav>
+  <body class="header">
+    <nav class="top-nav">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
       <ul>
         <li><a href="dashboard.html">HOME</a></li>
         <li><a href="workout.html">WORKOUT LOGGER</a></li>
@@ -23,57 +69,61 @@
       <button onclick="logout()">Logout</button>
     </nav>
 
-    <main>
-      <section>
-        <h1>Welcome to your dashboard, <span id="user-name">Champion</span>!</h1>
-        <p>Fill out your profile to personalize your experience.</p>
+    <!-- Profile Form -->
+    <div class="profile-data">
+      <h1>Welcome to your dashboard, <span id="user-name">Champion</span>!</h1>
+      <p>Fill out your profile to personalize your experience.</p>
 
-        <form id="profile-form">
-          <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required />
-          </div>
-          <div>
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" placeholder="Enter your age" required />
-          </div>
-          <div>
-            <label for="goal">Fitness Goal:</label>
-            <select id="goal" name="goal" required>
-              <option value="Weight Lifting">Weight Lifting</option>
-              <option value="Cardio">Cardio</option>
-              <option value="Yoga">Yoga</option>
-            </select>
-          </div>
-          <button type="submit">Save Profile</button>
-        </form>
-      </section>
-    </main>
+      <form id="profile-form">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+        </div>
+        <div>
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" placeholder="Enter your age" required />
+        </div>
+        <div>
+          <label for="goal">Fitness Goal:</label>
+          <select id="goal" name="goal" required>
+            <option value="Weight Lifting">Weight Lifting</option>
+            <option value="Cardio">Cardio</option>
+            <option value="Yoga">Yoga</option>
+          </select>
+        </div>
+        <button type="submit">Save Profile</button>
+      </form>
+    </div>
 
     <script>
+      function toggleMenu() {
+        const nav = document.querySelector(".top-nav ul");
+        nav.classList.toggle("show");
+      }
+
       window.onload = function () {
-        const savedName = localStorage.getItem('userName');
-        const savedAge = localStorage.getItem('userAge');
-        const savedGoal = localStorage.getItem('userGoal');
+        const savedName = localStorage.getItem("userName");
+        const savedAge = localStorage.getItem("userAge");
+        const savedGoal = localStorage.getItem("userGoal");
 
         if (savedName) {
-          document.getElementById('name').value = savedName;
-          document.getElementById('age').value = savedAge;
-          document.getElementById('goal').value = savedGoal;
-          document.getElementById('user-name').textContent = savedName;
+          document.getElementById("name").value = savedName;
+          document.getElementById("age").value = savedAge;
+          document.getElementById("goal").value = savedGoal;
+          document.getElementById("user-name").textContent = savedName;
         }
       };
 
-      document.getElementById('profile-form').addEventListener('submit', function (e) {
+      document.getElementById("profile-form").addEventListener("submit", function (e) {
         e.preventDefault();
 
-        const name = document.getElementById('name').value;
-        const age = document.getElementById('age').value;
-        const goal = document.getElementById('goal').value;
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        const goal = document.getElementById("goal").value;
 
-        localStorage.setItem('userName', name);
-        localStorage.setItem('userAge', age);
-        localStorage.setItem('userGoal', goal);
+        localStorage.setItem("userName", name);
+        localStorage.setItem("userAge", age);
+        localStorage.setItem("userGoal", goal);
       });
 
       function logout() {
