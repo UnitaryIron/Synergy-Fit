@@ -22,13 +22,7 @@ p {
     padding-left: 11%;
     padding-right: 8%;
     position: relative;
-
-    background-image: url("guy.jpg");
-    background-size: 45%;
-    background-repeat: no-repeat;
-    background-position: 92% 100%;
 }
-
 .top-nav {
     display: flex;
     align-items: center;
@@ -38,6 +32,7 @@ p {
     border-bottom: 1px solid #bababa;
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+
 .top-nav a {
     position: relative;
     text-decoration: none;
@@ -98,7 +93,6 @@ p {
     border: none;
     outline: none;
 }
-
 
 .text-box{
     margin-top: 20%;
