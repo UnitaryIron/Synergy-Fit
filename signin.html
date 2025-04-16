@@ -19,20 +19,40 @@
   <script src="https://accounts.google.com/gsi/client" async defer></script>
 
   <style>
-    .g_id_signin {
-      pointer-events: none;
-      opacity: 0.5;
-      transform: scale(1.5);
-    }
+  .g_id_signin {
+    pointer-events: none;
+    opacity: 0.5;
+    transform: scale(1.5);
+  }
+
+  .g-recaptcha {
+    transform: scale(0.75); /* Scales down the widget */
+    transform-origin: 0 0; /* Keeps the widget aligned */
+    position: fixed;
+    left: 170px; /* Distance from the left side */
+    bottom: 170px; /* Distance from the bottom, adjust as needed */
+    z-index: 9999; /* Makes sure it's on top of other elements */
+  }
+
+  /* For mobile devices */
+  @media (max-width: 767px) {
     .g-recaptcha {
-      transform: scale(0.75); /* Scales down the widget */
-      transform-origin: 0 0; /* Keeps the widget aligned */
-      position: fixed;
-      left: 135px; /* distance from the left side */
-      bottom: 170px; /* distance from the bottom, adjust as needed */
-      z-index: 9999; /* make sure it's on top of other elements */
+      left: 10px; /* Adjust distance from the left side for smaller screens */
+      bottom: 10px; /* Adjust distance from the bottom */
+      transform: scale(0.6); /* Adjust size for smaller devices */
     }
-  </style>
+  }
+
+  /* For tablets */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .g-recaptcha {
+      left: 20px; /* Adjust for tablets */
+      bottom: 20px;
+      transform: scale(0.7); /* Slightly bigger for tablets */
+    }
+  }
+</style>
+
 </head>
 
 <body>
