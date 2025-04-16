@@ -31,13 +31,13 @@ p {
 
 .top-nav {
     display: flex;
-    align-items: flex-start; /* Align items to the left */
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
     padding: 10px 20px;
     border-bottom: 1px solid #bababa;
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
-
-
 .top-nav a {
     position: relative;
     text-decoration: none;
