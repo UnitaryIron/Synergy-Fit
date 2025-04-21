@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
 *{  
     margin: 0;
@@ -18,11 +17,17 @@ p {
 .header{
     width: 100%;
     height: 100vh;
-    background: #000000;
+    background: #000942;
     padding-left: 11%;
     padding-right: 8%;
     position: relative;
+
+    background-image: url("photo.png");
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position: 92% 100%;
 }
+
 .top-nav {
     display: flex;
     align-items: left;
