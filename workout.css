@@ -165,3 +165,42 @@ button:hover {
 .delete-btn:hover {
   color: #ff4d4d;
 }
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links li a,
+  .nav-links li button {
+    width: 100%;
+    text-align: left;
+  }
+}
