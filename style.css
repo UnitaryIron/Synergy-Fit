@@ -137,12 +137,7 @@ p {
     background-position: center calc(100% + 80px);
   }
 }
-
-}
-
-  }
-
-  .top-nav {
+    .top-nav {
     flex-direction: column;
     align-items: flex-start;
     padding: 10px;
