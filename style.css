@@ -31,7 +31,7 @@ p {
 
 .header.no-bg {
   background-image: none !important;
-  background-color: #111 !important; /* dark so white text is visible */
+  background-color: #000000 !important; /* dark so white text is visible */
 }
 
 .top-nav {
@@ -138,7 +138,7 @@ p {
   .header {
     padding: 20px;
     background-size: 80%;
-    background-position: center calc(100% + 150px); /* adjusted here */
+    background-position: center calc(100% + 130px); /* adjusted here */
   }
 
   .top-nav {
