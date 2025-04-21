@@ -33,23 +33,15 @@
           <img src="arrow.png" />
         </div>
     </header>
-
     <script>
-      const mobileMenu = document.getElementById("mobile-menu");
-      const navLinks = document.getElementById("nav-links");
-
-      mobileMenu.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
-
-      const toggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".top-nav ul");
-      const header = document.querySelector(".header");
-
-     toggle.addEventListener("click", () => {
-     nav.classList.toggle("active");
-     header.classList.toggle("no-bg"); // <- add this
+     const mobileMenu = document.getElementById("mobile-menu");
+     const navLinks = document.getElementById("nav-links");
+     const header = document.querySelector(".header");
+  
+     mobileMenu.addEventListener("click", () => {
+     navLinks.classList.toggle("active");
+     header.classList.toggle("no-bg");
      });
-    </script>
+     </script>
   </body>
 </html>
