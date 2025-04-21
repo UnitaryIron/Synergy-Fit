@@ -134,8 +134,10 @@ p {
     padding: 20px;
     background-size: 80%;
   .your-class {
-    background-position: center 150%;
+    background-position: center calc(100% + 80px);
   }
+}
+
 }
 
   }
