@@ -29,6 +29,10 @@ p {
   background-position: 92% 100%;
 }
 
+.logo{
+  color: #fff;
+}
+
 .header.no-bg {
   background-image: none !important;
   background-color: #000000 !important; /* dark so white text is visible */
