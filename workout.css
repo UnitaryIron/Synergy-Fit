@@ -39,35 +39,40 @@ body {
   justify-content: space-between;
   padding: 10px 0;
   border-bottom: 1px solid #bababa;
+  position: relative;
 }
 
-.top-nav ul {
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Updated from .top-nav ul to .nav-links */
+.nav-links {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
 }
 
-.top-nav ul li {
-  list-style: none;
-  margin-right: 20px;
+.nav-links li {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.top-nav ul li a {
+.nav-links li a {
   text-decoration: none;
   color: #fff;
   font-size: 15px;
-}
-
-.top-nav a {
   position: relative;
-  text-decoration: none;
-  color: inherit;
 }
 
-.top-nav a::after {
+.nav-links li a::after {
   content: "";
   position: absolute;
   bottom: -4px;
@@ -78,11 +83,11 @@ body {
   transition: width 0.3s ease-in-out;
 }
 
-.top-nav a:hover::after {
+.nav-links li a:hover::after {
   width: 100%;
 }
 
-.top-nav button {
+.nav-links li button {
   background: none;
   color: #fff;
   border: none;
@@ -160,13 +165,6 @@ button:hover {
 .delete-btn:hover {
   color: #ff4d4d;
 }
-/* DEFAULT (DESKTOP) */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-}
 
 /* MOBILE OPTIMIZATION */
 @media (max-width: 768px) {
@@ -184,17 +182,30 @@ button:hover {
     padding: 10px;
   }
 
-  .top-nav ul {
-    flex-direction: column;
-    width: 100%;
+  .hamburger {
+    display: block;
   }
 
-  .top-nav ul li {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
     margin: 10px 0;
   }
 
-  .top-nav button {
-    margin-top: 10px;
+  .nav-links li a,
+  .nav-links li button {
+    width: 100%;
+    text-align: left;
   }
 
   .container {
@@ -217,28 +228,8 @@ button:hover {
     text-align: right;
   }
 
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    margin: 10px 0;
-  }
-
-  .nav-links li a,
-  .nav-links li button {
-    width: 100%;
-    text-align: left;
+  .logged-workouts {
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
