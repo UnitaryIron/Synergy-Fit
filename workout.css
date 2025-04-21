@@ -1,111 +1,105 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
-*{  
-    margin: 0;
-    padding: 0;
-    font-family:  'Oswald', sans-serif;
-    box-sizing: border-box;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+  box-sizing: border-box;
 }
 
 h1, h2, h3 {
-    font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 p {
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.header{
-    width: 100%;
-    height: 100vh;
-    background: #000000;
-    padding-left: 11%;
-    padding-right: 8%;
-    position: relative;
-
-    background-image: url("gym\ fella.jpg");
-    background-size: 45%;
-    background-repeat: no-repeat;
-    background-position: 92% 100%;
+body {
+  background-color: #000;
+  color: #fff;
 }
+
+.header {
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  padding: 20px 5%;
+  position: relative;
+  background-image: url("gym fella.jpg");
+  background-size: 45%;
+  background-repeat: no-repeat;
+  background-position: 92% 100%;
+}
+
 .top-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 10px;
-    padding: 10px 20px;
-    border-bottom: 1px solid #bababa;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #bababa;
+}
+
+.top-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.top-nav ul li {
+  list-style: none;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.top-nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
 }
 
 .top-nav a {
-    position: relative;
-    text-decoration: none;
-    color: inherit;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
 }
 
 .top-nav a::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #E50914; /* red underline */
-    transition: width 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #E50914;
+  transition: width 0.3s ease-in-out;
 }
 
 .top-nav a:hover::after {
-    width: 100%;
-}
-
-.top-nav a:hover {
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-    transform: scale(1);
-}
-
-
-
-.top-nav ul li{
-    list-style: none;
-    display: inline-block;
-    margin-right: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.top-nav ul li a{
-    text-decoration: none;
-    color: #fff;
-    font-size: 15px;
+  width: 100%;
 }
 
 .top-nav button {
-    background: none;
-    color: #fff; /* always white */
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font: inherit;
-    border-radius: 0; /* optional if you don't want rounded edges */
+  background: none;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
 }
 
-.top-nav button:hover {
-    background: none;
-    color: #fff; /* still white */
-    border: none;
-    outline: none;
-}
 .container {
   max-width: 600px;
   margin: auto;
+  padding: 20px;
 }
 
 h1, h2 {
   font-family: 'Oswald', sans-serif;
-  color: #fff; /* changed from red to white */
+  color: #fff;
 }
 
 textarea {
@@ -153,6 +147,7 @@ button:hover {
   border-radius: 5px;
   color: white;
 }
+
 .delete-btn {
   float: right;
   color: #E50914;
@@ -165,6 +160,58 @@ button:hover {
 .delete-btn:hover {
   color: #ff4d4d;
 }
+
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    background-size: contain;
+    background-position: center bottom;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .top-nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .top-nav ul li {
+    margin: 10px 0;
+  }
+
+  .top-nav button {
+    margin-top: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  textarea {
+    height: 80px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .delete-btn {
+    float: none;
+    display: block;
+    text-align: right;
+  }
+}
+
 .hamburger {
   display: none;
   font-size: 28px;
