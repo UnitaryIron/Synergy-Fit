@@ -4,39 +4,40 @@
     <meta charset="UTF-8" />
     <title>Workout Logger</title>
     <link rel="stylesheet" href="workout.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="ChatGPT Image Apr 3, 2025, 12_11_25 PM.png"
-    />
+    <link rel="icon" type="image/png" href="ChatGPT Image Apr 3, 2025, 12_11_25 PM.png" />
   </head>
-  <body class="header">
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <nav class="top-nav">
-      <ul>
-        <li><a href="dashboard.html">HOME</a></li>
-        <li><a href="workout.html">WORKOUT LOGGER</a></li>
-        <li><a href="library.html">EXERCISE LIBRARY</a></li>
-      </ul>
-      <button onclick="logout()">Logout</button>
-    </nav>
-    <div class="container">
-    <h1>Workout Logger</h1>
-    <textarea id="workout-input" placeholder="What workout did you just complete?"></textarea>
-    <button onclick="logWorkout()">Log Workout</button>
-    <div class="logged-workouts">
-      <h2>Previously Logged Workouts</h2>
-      <ul id="workout-list"></ul>
-    </div>
-  </div>
+  <body>
+    <div class="header">
+      <nav class="top-nav">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="dashboard.html">HOME</a></li>
+          <li><a href="workout.html">WORKOUT LOGGER</a></li>
+          <li><a href="library.html">EXERCISE LIBRARY</a></li>
+        </ul>
+        <button onclick="logout()">Logout</button>
+      </nav>
 
-  <script src="workout.js"></script>
+      <div class="container">
+        <h1>Workout Logger</h1>
+        <textarea id="workout-input" placeholder="What workout did you just complete?"></textarea>
+        <button onclick="logWorkout()">Log Workout</button>
+
+        <div class="logged-workouts">
+          <h2>Previously Logged Workouts</h2>
+          <ul id="workout-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="workout.js"></script>
     <script>
       function logout() {
         window.location.href = "index.html";
       }
+
       function toggleMenu() {
-       document.getElementById("navLinks").classList.toggle("active");
+        document.getElementById("navLinks").classList.toggle("active");
       }
     </script>
   </body>
