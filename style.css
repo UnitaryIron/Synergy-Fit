@@ -68,6 +68,9 @@ p {
 
 .header.no-bg {
   background-image: none !important;
+  background-color: #fff !important; /* or any dark color that fits your design */
+}
+
 }
 
 .top-nav ul li{
