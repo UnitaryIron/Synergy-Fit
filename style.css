@@ -133,7 +133,9 @@ p {
   .header {
     padding: 20px;
     background-size: 80%;
-    background-position: center bottom;
+  .your-class {
+    background-position: center 110%; /* pushes image a bit lower */
+  }
   }
 
   .top-nav {
