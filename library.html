@@ -49,51 +49,46 @@
         const exerciseListDiv = document.getElementById('exercise-list');
         let exercises = [];
 
-        function loadExercises(goal) {
-    const exerciseListDiv = document.getElementById('exercise-list');
-    let exercises = [];
-
-    if (goal === 'Weight Lifting') {
-        exercises = [
-            { name: "Barbell Squats", link: "https://www.bodybuilding.com/exercises/barbell-squat" },
-            { name: "Deadlifts", link: "https://www.bodybuilding.com/exercises/barbell-deadlift" },
-            { name: "Bench Press", link: "https://www.bodybuilding.com/exercises/barbell-bench-press-medium-grip" },
-            { name: "Overhead Press", link: "https://www.bodybuilding.com/exercises/standing-military-press" },
-            { name: "Bicep Curls", link: "https://www.bodybuilding.com/exercises/barbell-curl" }
-        ];
-    } else if (goal === 'Cardio') {
-        exercises = [
-            "Running",
-            "Cycling",
-            "Jump Rope",
-            "HIIT Workouts",
-            "Rowing"
-        ];
-    } else if (goal === 'Yoga') {
-        exercises = [
-            "Downward Dog",
-            "Warrior Pose",
-            "Tree Pose",
-            "Child's Pose",
-            "Cobra Pose"
-        ];
-    } else {
-        exercises = ["Please set your fitness goal in your profile to get exercise recommendations."];
-    }
-
-    // Handle both object and string cases
-    exerciseListDiv.innerHTML = exercises.map(exercise => {
-        if (typeof exercise === 'object') {
-            return `<p><a href="${exercise.link}" target="_blank">${exercise.name}</a></p>`;
+        if (goal === 'Weight Lifting') {
+            exercises = [
+                { name: "Barbell Squats", link: "https://www.bodybuilding.com/exercises/barbell-squat" },
+                { name: "Deadlifts", link: "https://www.bodybuilding.com/exercises/barbell-deadlift" },
+                { name: "Bench Press", link: "https://www.bodybuilding.com/exercises/barbell-bench-press-medium-grip" },
+                { name: "Overhead Press", link: "https://www.bodybuilding.com/exercises/standing-military-press" },
+                { name: "Bicep Curls", link: "https://www.bodybuilding.com/exercises/barbell-curl" }
+            ];
+        } else if (goal === 'Cardio') {
+            exercises = [
+                "Running",
+                "Cycling",
+                "Jump Rope",
+                "HIIT Workouts",
+                "Rowing"
+            ];
+        } else if (goal === 'Yoga') {
+            exercises = [
+                "Downward Dog",
+                "Warrior Pose",
+                "Tree Pose",
+                "Child's Pose",
+                "Cobra Pose"
+            ];
         } else {
-            return `<p>${exercise}</p>`;
+            exercises = ["Please set your fitness goal in your profile to get exercise recommendations."];
         }
-    }).join('');
-}
 
-function logout() {
-    window.location.href = "index.html";
-}
+        // Handle both object and string cases
+        exerciseListDiv.innerHTML = exercises.map(exercise => {
+            if (typeof exercise === 'object') {
+                return `<p><a href="${exercise.link}" target="_blank">${exercise.name}</a></p>`;
+            } else {
+                return `<p>${exercise}</p>`;
+            }
+        }).join('');
+      }
+
+      function logout() {
+        window.location.href = "index.html";
       }
     </script>
   </body>
