@@ -50,13 +50,15 @@
         let exercises = [];
 
         if (goal === 'Weight Lifting') {
-          exercises = [
-            "Barbell Squats",
-            "Deadlifts",
-            "Bench Press",
-            "Overhead Press",
-            "Bicep Curls"
-          ];
+  exercises = [
+    { name: "Barbell Squats", link: "https://www.bodybuilding.com/exercises/barbell-squat" },
+    { name: "Deadlifts", link: "https://www.bodybuilding.com/exercises/barbell-deadlift" },
+    { name: "Bench Press", link: "https://www.bodybuilding.com/exercises/barbell-bench-press-medium-grip" },
+    { name: "Overhead Press", link: "https://www.bodybuilding.com/exercises/standing-military-press" },
+    { name: "Bicep Curls", link: "https://www.bodybuilding.com/exercises/barbell-curl" }
+  ];
+}
+
         } else if (goal === 'Cardio') {
           exercises = [
             "Running",
