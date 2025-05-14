@@ -9,6 +9,28 @@
       type="image/png"
       href="ChatGPT Image Apr 3, 2025, 12_11_25 PM.png"
     />
+    <style>
+      .exercise-item {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .learn-more-btn {
+        background-color: #ff0000; /* Red color */
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .learn-more-btn:hover {
+        background-color: #cc0000; /* Darker red on hover */
+      }
+    </style>
   </head>
   <body class="header">
     <nav class="top-nav">
@@ -49,66 +71,46 @@
         const exerciseListDiv = document.getElementById('exercise-list');
         let exercises = [];
 
-        <script>
-  function loadExercises(goal) {
-    const exerciseListDiv = document.getElementById('exercise-list');
-    let exercises = [];
+        if (goal === 'Weight Lifting') {
+          exercises = [
+            { name: "Barbell Squats", link: "https://www.bodybuilding.com/exercises/barbell-squat" },
+            { name: "Deadlifts", link: "https://www.bodybuilding.com/exercises/barbell-deadlift" },
+            { name: "Bench Press", link: "https://www.bodybuilding.com/exercises/barbell-bench-press-medium-grip" },
+            { name: "Overhead Press", link: "https://www.bodybuilding.com/exercises/standing-military-press" },
+            { name: "Bicep Curls", link: "https://www.bodybuilding.com/exercises/barbell-curl" }
+          ];
+        } else if (goal === 'Cardio') {
+          exercises = [
+            { name: "Running", link: "https://www.runnersworld.com/training/a20801370/beginners-running-guide/" },
+            { name: "Cycling", link: "https://www.bicycling.com/training/a20047880/cycling-for-beginners/" },
+            { name: "Jump Rope", link: "https://www.self.com/story/jump-rope-workout-for-beginners" },
+            { name: "HIIT Workouts", link: "https://www.healthline.com/health/fitness-exercise/hiit-workouts" },
+            { name: "Rowing", link: "https://www.concept2.com/indoor-rowers/training/guide" }
+          ];
+        } else if (goal === 'Yoga') {
+          exercises = [
+            { name: "Downward Dog", link: "https://www.yogajournal.com/poses/downward-facing-dog/" },
+            { name: "Warrior Pose", link: "https://www.yogajournal.com/poses/warrior-i-pose/" },
+            { name: "Tree Pose", link: "https://www.yogajournal.com/poses/tree-pose/" },
+            { name: "Child's Pose", link: "https://www.yogajournal.com/poses/child-s-pose/" },
+            { name: "Cobra Pose", link: "https://www.yogajournal.com/poses/cobra-pose/" }
+          ];
+        } else {
+          exercises = ["Please set your fitness goal in your profile to get exercise recommendations."];
+        }
 
-    if (goal === 'Weight Lifting') {
-      exercises = [
-        { name: "Barbell Squats", link: "https://www.bodybuilding.com/exercises/barbell-squat" },
-        { name: "Deadlifts", link: "https://www.bodybuilding.com/exercises/barbell-deadlift" },
-        { name: "Bench Press", link: "https://www.bodybuilding.com/exercises/barbell-bench-press-medium-grip" },
-        { name: "Overhead Press", link: "https://www.bodybuilding.com/exercises/standing-military-press" },
-        { name: "Bicep Curls", link: "https://www.bodybuilding.com/exercises/barbell-curl" }
-      ];
-    } else if (goal === 'Cardio') {
-      exercises = [
-        { name: "Running", link: "https://www.runnersworld.com/training/a20801370/beginners-running-guide/" },
-        { name: "Cycling", link: "https://www.bicycling.com/training/a20047880/cycling-for-beginners/" },
-        { name: "Jump Rope", link: "https://www.self.com/story/jump-rope-workout-for-beginners" },
-        { name: "HIIT Workouts", link: "https://www.healthline.com/health/fitness-exercise/hiit-workouts" },
-        { name: "Rowing", link: "https://www.concept2.com/indoor-rowers/training/guide" }
-      ];
-    } else if (goal === 'Yoga') {
-      exercises = [
-        { name: "Downward Dog", link: "https://www.yogajournal.com/poses/downward-facing-dog/" },
-        { name: "Warrior Pose", link: "https://www.yogajournal.com/poses/warrior-i-pose/" },
-        { name: "Tree Pose", link: "https://www.yogajournal.com/poses/tree-pose/" },
-        { name: "Child's Pose", link: "https://www.yogajournal.com/poses/child-s-pose/" },
-        { name: "Cobra Pose", link: "https://www.yogajournal.com/poses/cobra-pose/" }
-      ];
-    } else {
-      exercises = ["Please set your fitness goal in your profile to get exercise recommendations."];
-    }
-
-    // Generate HTML for exercises
-    exerciseListDiv.innerHTML = exercises.map(exercise => {
-      if (typeof exercise === 'object') {
-        return `
-          <div class="exercise-item">
-            <p>${exercise.name}</p>
-            <a href="${exercise.link}" target="_blank" class="learn-more-btn">Learn More</a>
-          </div>
-        `;
-      } else {
-        return `<p>${exercise}</p>`;
-      }
-    }).join('');
-  }
-
-  function logout() {
-    window.location.href = "index.html";
-  }
-</script>
-
-        // Handle both object and string cases
+        // Generate HTML for exercises
         exerciseListDiv.innerHTML = exercises.map(exercise => {
-            if (typeof exercise === 'object') {
-                return `<p><a href="${exercise.link}" target="_blank">${exercise.name}</a></p>`;
-            } else {
-                return `<p>${exercise}</p>`;
-            }
+          if (typeof exercise === 'object') {
+            return `
+              <div class="exercise-item">
+                <p>${exercise.name}</p>
+                <a href="${exercise.link}" target="_blank" class="learn-more-btn">Learn More</a>
+              </div>
+            `;
+          } else {
+            return `<p>${exercise}</p>`;
+          }
         }).join('');
       }
 
