@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
 
-* {  
+* {
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
@@ -19,64 +19,35 @@ p {
     width: 100%;
     min-height: 100vh;
     background: #000000;
-    padding: 5%;
+    padding: 0 5%;
     position: relative;
 }
 
+/* Mobile-first navigation */
 .top-nav {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 5%;
+    padding: 15px 0;
     border-bottom: 1px solid #bababa;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.top-nav a {
-    position: relative;
-    text-decoration: none;
-    color: inherit;
-}
-
-.top-nav a::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #E50914;
-    transition: width 0.3s ease-in-out;
-}
-
-.top-nav a:hover::after {
-    width: 100%;
-}
-
-.top-nav a:hover {
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-    transform: scale(1);
 }
 
 .top-nav ul {
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .top-nav ul li {
     list-style: none;
+    margin: 5px 15px;
 }
 
 .top-nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .top-nav button {
@@ -86,88 +57,99 @@ p {
     outline: none;
     cursor: pointer;
     font: inherit;
+    padding: 5px 0;
 }
 
-.top-nav button:hover {
-    background: none;
-    color: #fff;
+/* Hover effects for desktop only */
+@media (hover: hover) {
+    .top-nav a {
+        position: relative;
+    }
+    
+    .top-nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: #E50914;
+        transition: width 0.3s ease-in-out;
+    }
+    
+    .top-nav a:hover::after {
+        width: 100%;
+    }
+    
+    .top-nav a:hover {
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        transform: scale(1);
+    }
 }
 
+/* Profile and Exercise boxes */
 .profile-data,
 .exercise-library {
-    margin-top: 30px;
-    padding: 20px;
+    margin: 30px auto;
+    padding: 15px;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid #E50914;
     border-radius: 12px;
+    width: 90%;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
     backdrop-filter: blur(5px);
 }
 
 .profile-data h1,
 .exercise-library h2 {
     color: #E50914;
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
 .profile-data p,
 #exercise-list p {
     font-family: 'Montserrat', sans-serif;
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 10px;
+    line-height: 1.5;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
+/* Tablet and desktop styles */
+@media (min-width: 768px) {
     .top-nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
     }
-
+    
     .top-nav ul {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
+        margin-top: 0;
     }
-
+    
+    .top-nav ul li {
+        margin: 10px 20px 10px 0;
+    }
+    
+    .top-nav ul li a {
+        font-size: 15px;
+    }
+    
+    .profile-data h1,
+    .exercise-library h2 {
+        font-size: 28px;
+    }
+    
+    .profile-data p,
+    #exercise-list p {
+        font-size: 16px;
+    }
+    
     .profile-data,
     .exercise-library {
-        padding: 15px;
-        width: 90%;
-    }
-
-    .profile-data h1,
-    .exercise-library h2 {
-        font-size: 22px;
-    }
-
-    .profile-data p,
-    #exercise-list p {
-        font-size: 14px;
-    }
-
-    .header {
-        padding: 10% 5%;
-    }
-}
-
-@media (max-width: 480px) {
-    .top-nav ul li a {
-        font-size: 14px;
-    }
-
-    .profile-data h1,
-    .exercise-library h2 {
-        font-size: 20px;
-    }
-
-    .profile-data p,
-    #exercise-list p {
-        font-size: 13px;
+        padding: 20px;
     }
 }
