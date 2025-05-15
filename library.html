@@ -57,15 +57,14 @@
     </section>
 
     <script>
-     document.addEventListener('DOMContentLoaded', function() {
-     const menuToggle = document.querySelector('.menu-toggle');
-     const navLinks = document.querySelector('.nav-links');
+    const mobileMenu = document.getElementById("mobile-menu");
+     const navLinks = document.getElementById("nav-links");
+     const header = document.querySelector(".header");
   
-     menuToggle.addEventListener('click', function() {
-     this.classList.toggle('active');
-     navLinks.classList.toggle('active');
+     mobileMenu.addEventListener("click", () => {
+     navLinks.classList.toggle("active");
+     header.classList.toggle("no-bg");
      });
-    });
       window.onload = function() {
         const savedName = localStorage.getItem('userName');
         const savedGoal = localStorage.getItem('userGoal');
