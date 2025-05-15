@@ -1,122 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Oswald', sans-serif;
-  box-sizing: border-box;
+*{  
+    margin: 0;
+    padding: 0;
+    font-family:  'Oswald', sans-serif;
+    box-sizing: border-box;
 }
 
 h1, h2, h3 {
-  font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
 
 p {
-  font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
-body {
-  background-color: #000;
-  color: #fff;
+.header{
+    width: 100%;
+    height: 100vh;
+    background: #000000;
+    padding-left: 11%;
+    padding-right: 8%;
+    position: relative;
 }
-
-.header {
-  width: 100%;
-  height: 100vh;
-  background: #000000;
-  padding: 20px 5%;
-  position: relative;
-  background-image: url("gym fella.jpg");
-  background-size: 45%;
-  background-repeat: no-repeat;
-  background-position: 92% 100%;
-}
-
-/* Top Nav (Updated) */
 .top-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #bababa;
-  position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #bababa;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.hamburger, .menu-toggle {
-  display: none !important;
+.top-nav a {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Nav Links */
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  gap: 20px;
-  align-items: center;
+.top-nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #E50914; /* red underline */
+    transition: width 0.3s ease-in-out;
 }
 
-.nav-links li {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.top-nav a:hover::after {
+    width: 100%;
 }
 
-.nav-links li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 15px;
-  position: relative;
+.top-nav a:hover {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transform: scale(1);
 }
 
-.nav-links li a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #E50914;
-  transition: width 0.3s ease-in-out;
+
+
+.top-nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.nav-links li a:hover::after {
-  width: 100%;
+.top-nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
 }
 
-.nav-links li button {
-  background: none;
-  color: #fff;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font: inherit;
+.top-nav button {
+    background: none;
+    color: #fff; /* always white */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    border-radius: 0; /* optional if you don't want rounded edges */
+}
+
+.top-nav button:hover {
+    background: none;
+    color: #fff; /* still white */
+    border: none;
+    outline: none;
 }
 
 /* Profile box */
 .profile-data {
-  margin-top: 30px;
+  margin-top: 50px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid #E50914;
   border-radius: 12px;
-  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
   backdrop-filter: blur(5px);
 }
 
 .profile-data h1 {
   color: #E50914;
-  font-size: 24px;
-  margin-bottom: 15px;
-  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
 .profile-data p {
   font-family: 'Montserrat', sans-serif;
   color: #fff;
-  font-size: 15px;
-  text-align: center;
+  font-size: 16px;
 }
 
 /* Exercise Library box */
@@ -126,147 +125,21 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid #E50914;
   border-radius: 12px;
-  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
   backdrop-filter: blur(5px);
 }
 
 .exercise-library h2 {
   color: #E50914;
-  font-size: 24px;
-  margin-bottom: 15px;
-  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
-.exercise-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-  margin-bottom: 15px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  border: 1px solid #333;
-}
-
-.exercise-item p {
-  font-family: 'Oswald', sans-serif;
+#exercise-list p {
+  font-family: 'Montserrat', sans-serif;
   color: #fff;
   font-size: 16px;
   margin-bottom: 10px;
-  text-align: center;
-}
-
-.learn-more-btn {
-  background-color: #E50914;
-  color: white;
-  padding: 8px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s;
-  text-align: center;
-  width: 100%;
-  max-width: 200px;
-}
-
-.learn-more-btn:hover {
-  background-color: #b2070f;
-}
-
-/* Logged Workouts */
-.logged-workouts {
-  margin-top: 30px;
-}
-
-.logged-workouts ul {
-  list-style: none;
-  padding-left: 0;
-  color: white;
-}
-
-.logged-workouts li {
-  background-color: #1c1c1c;
-  border: 1px solid #333;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  color: white;
-}
-
-.delete-btn {
-  float: right;
-  color: #E50914;
-  cursor: pointer;
-  font-size: 18px;
-  margin-left: 15px;
-  transition: color 0.3s ease;
-}
-
-.delete-btn:hover {
-  color: #ff4d4d;
-}
-
-/* Container */
-.container {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
-}
-
-textarea {
-  width: 100%;
-  height: 100px;
-  margin: 20px 0;
-  padding: 10px;
-  font-size: 16px;
-  background-color: #1a1a1a;
-  color: white;
-  border: 1px solid #444;
-  border-radius: 8px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #E50914;
-  color: white;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background-color: #ff1a1a;
-}
-
-/* Responsive Adjustments */
-@media (min-width: 768px) {
-  .exercise-item {
-    flex-direction: row;
-  }
-
-  .exercise-item p {
-    margin-bottom: 0;
-    text-align: left;
-  }
-
-  .profile-data, .exercise-library {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .profile-data h1, .exercise-library h2 {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 768px) {
-  .header {
-    height: auto;
-    background-size: contain;
-    background-position: center bottom;
-  }
 }
