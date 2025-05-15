@@ -1,285 +1,272 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
 
-/* Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Oswald', sans-serif;
-    box-sizing: border-box;
-}
-
-html, body {
-    width: 100%;
-    min-height: 100vh;
-    background: #000000;
-    color: #fff;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+  box-sizing: border-box;
 }
 
 h1, h2, h3 {
-    font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 p {
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
 }
 
 .header {
-    width: 100%;
-    min-height: 100vh;
-    padding: 20px 5%;
-    position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  padding: 20px 5%;
+  position: relative;
+  background-image: url("gym fella.jpg");
+  background-size: 45%;
+  background-repeat: no-repeat;
+  background-position: 92% 100%;
 }
 
-/* Mobile Navigation */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-    padding: 10px;
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 1000;
-}
-
-.hamburger {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 5px 0;
-    transition: all 0.3s ease;
-}
-
+/* Top Nav (Updated) */
 .top-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 0;
-    position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #bababa;
+  position: relative;
 }
 
-.top-nav.active {
-    transform: translateX(0);
+.hamburger, .menu-toggle {
+  display: none !important;
 }
 
-.top-nav ul {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+/* Nav Links */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
 }
 
-.top-nav ul li {
-    list-style: none;
-    margin: 10px 0;
-    width: 100%;
+.nav-links li {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.top-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    display: block;
-    padding: 8px 0;
-    transition: all 0.3s ease;
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  position: relative;
 }
 
-.top-nav button {
-    background: none;
-    color: #fff;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font: inherit;
-    padding: 8px 0;
-    width: 100%;
-    text-align: left;
-    margin-top: 10px;
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #E50914;
+  transition: width 0.3s ease-in-out;
 }
 
-.top-nav a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #E50914;
-    transition: width 0.3s ease-in-out;
+.nav-links li a:hover::after {
+  width: 100%;
 }
 
-.top-nav a:hover::after {
-    width: 100%;
+.nav-links li button {
+  background: none;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
 }
 
 /* Profile box */
 .profile-data {
-    margin-top: 30px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #E50914;
-    border-radius: 12px;
-    width: 100%;
-    backdrop-filter: blur(5px);
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #E50914;
+  border-radius: 12px;
+  width: 100%;
+  backdrop-filter: blur(5px);
 }
 
 .profile-data h1 {
-    color: #E50914;
-    font-size: 24px;
-    margin-bottom: 15px;
-    text-align: center;
+  color: #E50914;
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .profile-data p {
-    font-family: 'Montserrat', sans-serif;
-    color: #fff;
-    font-size: 15px;
-    text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
 }
 
 /* Exercise Library box */
 .exercise-library {
-    margin-top: 30px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #E50914;
-    border-radius: 12px;
-    width: 100%;
-    backdrop-filter: blur(5px);
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #E50914;
+  border-radius: 12px;
+  width: 100%;
+  backdrop-filter: blur(5px);
 }
 
 .exercise-library h2 {
-    color: #E50914;
-    font-size: 24px;
-    margin-bottom: 15px;
-    text-align: center;
+  color: #E50914;
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-/* Exercise items */
 .exercise-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    margin-bottom: 15px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid #333;
 }
 
 .exercise-item p {
-    font-family: 'Oswald', sans-serif;
-    color: #fff;
-    font-size: 16px;
-    margin-bottom: 10px;
-    text-align: center;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .learn-more-btn {
-    background-color: #E50914;
-    color: white;
-    padding: 8px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    text-align: center;
-    width: 100%;
-    max-width: 200px;
+  background-color: #E50914;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
 }
 
 .learn-more-btn:hover {
-    background-color: #b2070f;
+  background-color: #b2070f;
 }
 
-/* Desktop Styles */
+/* Logged Workouts */
+.logged-workouts {
+  margin-top: 30px;
+}
+
+.logged-workouts ul {
+  list-style: none;
+  padding-left: 0;
+  color: white;
+}
+
+.logged-workouts li {
+  background-color: #1c1c1c;
+  border: 1px solid #333;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.delete-btn {
+  float: right;
+  color: #E50914;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: #ff4d4d;
+}
+
+/* Container */
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin: 20px 0;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #1a1a1a;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #E50914;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff1a1a;
+}
+
+/* Responsive Adjustments */
 @media (min-width: 768px) {
-    .menu-toggle {
-        display: none;
-    }
+  .exercise-item {
+    flex-direction: row;
+  }
 
-    .top-nav {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 0;
-    }
+  .exercise-item p {
+    margin-bottom: 0;
+    text-align: left;
+  }
 
-    .top-nav ul {
-        flex-direction: row;
-        justify-content: center;
-    }
+  .profile-data, .exercise-library {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .top-nav ul li {
-        margin: 0 15px;
-        width: auto;
-    }
-
-    .top-nav button {
-        width: auto;
-        padding: 8px 15px;
-        text-align: center;
-        margin-top: 0;
-    }
-
-    .exercise-item {
-        flex-direction: row;
-    }
-
-    .exercise-item p {
-        margin-bottom: 0;
-        text-align: left;
-    }
-
-    .profile-data, .exercise-library {
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .profile-data h1, .exercise-library h2 {
-        font-size: 28px;
-    }
+  .profile-data h1, .exercise-library h2 {
+    font-size: 28px;
+  }
 }
 
-/* Mobile Menu Animation */
-.top-nav {
-    transition: transform 0.3s ease-in-out;
-}
-
-@media (max-width: 767px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .top-nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 250px;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.9);
-        padding: 60px 20px 20px;
-        transform: translateX(100%);
-        z-index: 999;
-        border-left: 1px solid #E50914;
-    }
-
-    .top-nav.active {
-        transform: translateX(0);
-    }
-
-    .menu-toggle.active .hamburger:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .menu-toggle.active .hamburger:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active .hamburger:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    background-size: contain;
+    background-position: center bottom;
+  }
 }
