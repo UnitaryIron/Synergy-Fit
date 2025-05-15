@@ -34,11 +34,19 @@
   </head>
   <body class="header">
     <nav class="top-nav">
+      <nav class="top-nav">
+       <div class="menu-toggle">
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+       </div>
       <ul>
         <li><a href="dashboard.html">HOME</a></li>
         <li><a href="workout.html">WORKOUT LOGGER</a></li>
         <li><a href="library.html">EXERCISE LIBRARY</a></li>
       </ul>
+     <button onclick="logout()">Logout</button>
+      </nav>
       <button onclick="logout()">Logout</button>
     </nav>
 
@@ -53,6 +61,15 @@
     </section>
 
     <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const topNav = document.querySelector('.top-nav');
+    
+    menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        topNav.classList.toggle('active');
+    });
+});
       window.onload = function() {
         const savedName = localStorage.getItem('userName');
         const savedGoal = localStorage.getItem('userGoal');
