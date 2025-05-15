@@ -34,8 +34,6 @@
   </head>
   <body class="header">
   <nav class="top-nav">
-        <div class="logo">Synergy Fit</div>
-        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
         <ul class="nav-links" id="nav-links">
           <li><a href="dashboard.html">HOME</a></li>
           <li><a href="workout.html">WORKOUT LOGGER</a></li>
@@ -55,14 +53,6 @@
     </section>
 
     <script>
-    const mobileMenu = document.getElementById("mobile-menu");
-     const navLinks = document.getElementById("nav-links");
-     const header = document.querySelector(".header");
-  
-     mobileMenu.addEventListener("click", () => {
-     navLinks.classList.toggle("active");
-     header.classList.toggle("no-bg");
-     });
       window.onload = function() {
         const savedName = localStorage.getItem('userName');
         const savedGoal = localStorage.getItem('userGoal');
