@@ -34,17 +34,15 @@
   </head>
   <body class="header">
   <nav class="top-nav">
-    <div class="menu-toggle">
-      <div class="hamburger"></div>
-      <div class="hamburger"></div>
-      <div class="hamburger"></div>
+        <div class="logo">Synergy Fit</div>
+        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="dashboard.html">HOME</a></li>
+          <li><a href="workout.html">WORKOUT LOGGER</a></li>
+          <li><a href="library.html">EXERCISE LIBRARY</a></li>
+        <button onclick="logout()">Logout</button>
     </div>
-    <div class="nav-links">
-      <a href="dashboard.html">HOME</a>
-      <a href="workout.html">WORKOUT LOGGER</a>
-      <a href="library.html">EXERCISE LIBRARY</a>
-      <button onclick="logout()">Logout</button>
-    </div>
+     </ul>
   </nav>
     <div class="profile-data">
       <h1>Welcome back, <span id="user-name">Champion</span>!</h1>
