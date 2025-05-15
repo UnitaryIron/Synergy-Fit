@@ -33,23 +33,19 @@
     </style>
   </head>
   <body class="header">
-    <nav class="top-nav">
-      <nav class="top-nav">
-       <div class="menu-toggle">
-        <div class="hamburger"></div>
-        <div class="hamburger"></div>
-        <div class="hamburger"></div>
-       </div>
-      <ul>
-        <li><a href="dashboard.html">HOME</a></li>
-        <li><a href="workout.html">WORKOUT LOGGER</a></li>
-        <li><a href="library.html">EXERCISE LIBRARY</a></li>
-      </ul>
-     <button onclick="logout()">Logout</button>
-      </nav>
+  <nav class="top-nav">
+    <div class="menu-toggle">
+      <div class="hamburger"></div>
+      <div class="hamburger"></div>
+      <div class="hamburger"></div>
+    </div>
+    <div class="nav-links">
+      <a href="dashboard.html">HOME</a>
+      <a href="workout.html">WORKOUT LOGGER</a>
+      <a href="library.html">EXERCISE LIBRARY</a>
       <button onclick="logout()">Logout</button>
-    </nav>
-
+    </div>
+  </nav>
     <div class="profile-data">
       <h1>Welcome back, <span id="user-name">Champion</span>!</h1>
       <p id="profile-info"></p>
@@ -61,15 +57,15 @@
     </section>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const topNav = document.querySelector('.top-nav');
-    
-    menuToggle.addEventListener('click', function() {
-        this.classList.toggle('active');
-        topNav.classList.toggle('active');
+     document.addEventListener('DOMContentLoaded', function() {
+     const menuToggle = document.querySelector('.menu-toggle');
+     const navLinks = document.querySelector('.nav-links');
+  
+     menuToggle.addEventListener('click', function() {
+     this.classList.toggle('active');
+     navLinks.classList.toggle('active');
+     });
     });
-});
       window.onload = function() {
         const savedName = localStorage.getItem('userName');
         const savedGoal = localStorage.getItem('userGoal');
