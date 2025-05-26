@@ -4,12 +4,11 @@ Synergy Fit
 **
 [Live Demo](https://synergy-fit.vercel.app/)
 
-**Overview**
+## Overview
 
 Synergy Fit is a fully personalized, mobile-optimized fitness website designed to help users set fitness goals, explore targeted exercises, and track their workout progress. With Google Sign-In and reCAPTCHA protection, users can securely manage their fitness journey on a sleek, responsive interface.
 
- **Features
-**
+## Features
 
 **Google Authentication** with reCAPTCHA security
 **User Dashboard** to view and manage fitness data
@@ -26,7 +25,7 @@ Synergy Fit is a fully personalized, mobile-optimized fitness website designed t
 **Security**: Google reCAPTCHA  
 **Deployment**: Vercel
 
-**Screenshots**
+## Screenshots
 
 *(Add screenshots here if available for dashboard, exercise library, etc.)*
 
