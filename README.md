@@ -25,12 +25,10 @@ Synergy Fit is a fully personalized, mobile-optimized fitness website designed t
 **Deployment**: Vercel
 
 ## Screenshots
+![Uploading Screenshot 2025-05-24 131851.png…]()
 
-*(Add screenshots here if available for dashboard, exercise library, etc.)*
 
----
-
-**Getting Started**
+## Getting Started
 
 ### Prerequisites
 
