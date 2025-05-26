@@ -1,4 +1,4 @@
-**Synergy Fit**
+## **Synergy Fit**
 
 **Your Personalized Fitness Dashboard. Built for You.**
 [Live Demo](https://synergy-fit.vercel.app/)
