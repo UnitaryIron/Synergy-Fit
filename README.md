@@ -1,4 +1,4 @@
-**Synergy Fit**
+![Screenshot 2025-05-26 173129](https://github.com/user-attachments/assets/6c772822-c008-4294-b6b6-b185d989369e)![Screenshot 2025-05-26 173129](https://github.com/user-attachments/assets/97aeb25b-5bdf-45b3-a322-a27d385716e8)![Screenshot 2025-05-26 173129](https://github.com/user-attachments/assets/cb7068c2-fecd-4836-9cae-7238580783b3)![Screenshot 2025-05-26 173129](https://github.com/user-attachments/assets/2f5c1b32-7967-4246-a38d-fc27a9f49135)**Synergy Fit**
 
 **Your Personalized Fitness Dashboard. Built for You.**
 [Live Demo](https://synergy-fit.vercel.app/)
@@ -25,8 +25,7 @@ Synergy Fit is a fully personalized, mobile-optimized fitness website designed t
 **Deployment**: Vercel
 
 ## Screenshots
-![Uploading Screenshot 2025-05-24 131851.png…]()
-
+![Screenshot 2025-05-26 173129](https://github.com/user-attachments/assets/33d8c8e2-4d78-4c65-998e-da74d771ff78)
 
 ## Getting Started
 
