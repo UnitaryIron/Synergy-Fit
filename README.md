@@ -9,8 +9,7 @@ Synergy Fit is a fully personalized, mobile-optimized fitness website designed t
 
 ## Features
 
-**Google Authentication** with reCAPTCHA security
-
+**Google Authentication** with reCAPTCHA security    
 **User Dashboard** to view and manage fitness data
 
 **Goal Setter** to define your personal fitness targets
