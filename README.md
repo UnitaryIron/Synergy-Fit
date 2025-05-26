@@ -24,7 +24,7 @@ Synergy Fit is a fully personalized, mobile-optimized fitness website designed t
 **Security**: Google reCAPTCHA  
 **Deployment**: Vercel
 
-### Prerequisites
+## Prerequisites
 
 - Modern web browser (Chrome, Firefox, etc.)
 - Google account to sign in
