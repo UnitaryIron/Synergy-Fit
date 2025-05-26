@@ -30,7 +30,9 @@ Synergy Fit is a fully personalized, mobile-optimized fitness website designed t
 - Google account to sign in
 
 ## Screenshots
+
 Note that screenshots are taken across multiple devices for showing the experience in all of it. It is the reason why a page is sometimes screenshot twice.
+
 ![Screenshot 2025-05-26 173129](https://github.com/user-attachments/assets/33d8c8e2-4d78-4c65-998e-da74d771ff78)
 ![Screenshot 2025-05-26 172836](https://github.com/user-attachments/assets/55b6e802-e58b-412e-ac5c-2d7f24381f39)
 ![Screenshot 2025-05-26 172902](https://github.com/user-attachments/assets/63358587-a09a-4e25-a738-d9b936221741)
